@@ -28,15 +28,10 @@ def fizzbuzz(n):
     print(" ".join(tmp_result))
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:  # Check for exactly one command-line argument
+    if len(sys.argv) != 2:
         print("Usage: ./0-fizzbuzz.py <number>")
         print("Example: ./0-fizzbuzz.py 89")
         sys.exit(1)
 
-    try:
-        number = int(sys.argv[1])
-        fizzbuzz(number)
-    except ValueError:
-        print("Error: Invalid input. Please provide a valid number.")
-        sys.exit(1)
-
+    number = int(sys.argv[1])
+    fizzbuzz(number)
