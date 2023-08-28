@@ -4,7 +4,6 @@
 """
 import sys
 
-
 def fizzbuzz(n):
     """
     FizzBuzz function prints numbers from 1 to n separated by a space.
@@ -28,13 +27,16 @@ def fizzbuzz(n):
             tmp_result.append(str(i))
     print(" ".join(tmp_result))
 
-
 if __name__ == '__main__':
-    if len(sys.argv) <= 1:
-        print("Missing number")
+    if len(sys.argv) != 2:  # Check for exactly one command-line argument
         print("Usage: ./0-fizzbuzz.py <number>")
         print("Example: ./0-fizzbuzz.py 89")
         sys.exit(1)
 
-    number = int(sys.argv[1])
-    fizzbuzz(number)
+    try:
+        number = int(sys.argv[1])
+        fizzbuzz(number)
+    except ValueError:
+        print("Error: Invalid input. Please provide a valid number.")
+        sys.exit(1)
+
